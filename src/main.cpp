@@ -27,24 +27,27 @@ static constexpr auto USAGE =
           --drifting    Drifting mine.
 )";
 
-int main(int argc, const char **argv)
+int main(int argc, const char** argv)
 {
-  try {
-    std::map<std::string, docopt::value> args = docopt::docopt(USAGE,
-      { std::next(argv), std::next(argv, argc) },
-      true,// show help if requested
-      fmt::format("{} {}",
-        myproject::cmake::project_name,
-        myproject::cmake::project_version));// version string, acquired from config.hpp via CMake
+	try
+	{
+		std::map<std::string, docopt::value> args = docopt::docopt(USAGE,
+		  { std::next(argv), std::next(argv, argc) },
+		  true,// show help if requested
+		  fmt::format("{} {}",
+			neko::project_name,
+			neko::project_version));// version string, acquired from config.hpp via CMake
 
-    for (auto const &arg : args) { std::cout << arg.first << "=" << arg.second << '\n'; }
+		for (auto const& arg : args) { std::cout << arg.first << "=" << arg.second << '\n'; }
 
 
-    // Use the default logger (stdout, multi-threaded, colored)
-    spdlog::info("Hello, {}!", "World");
+		// Use the default logger (stdout, multi-threaded, colored)
+		spdlog::info("Hello, {}!", "World");
 
-    fmt::print("Hello, from {}\n", "{fmt}");
-  } catch (const std::exception &e) {
-    fmt::print("Unhandled exception in main: {}", e.what());
-  }
+		fmt::print("Hello, from {}\n", "{fmt}");
+	}
+	catch (const std::exception& e)
+	{
+		fmt::print("Unhandled exception in main: {}", e.what());
+	}
 }
