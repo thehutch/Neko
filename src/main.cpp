@@ -5,7 +5,7 @@
 #include <spdlog/spdlog.h>
 
 // This file will be generated automatically when you run the CMake configuration step.
-// It creates a namespace called `myproject`.
+// It creates a namespace called `Neko`.
 // You can modify the source template at `configured_files/config.hpp.in`.
 #include <internal_use_only/config.hpp>
 
