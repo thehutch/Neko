@@ -6,7 +6,7 @@ on:
   push:
     tags:
     branches:
-      - [ $default-branch ]
+      - main
 
 env:
   # Conan cache environment variables
